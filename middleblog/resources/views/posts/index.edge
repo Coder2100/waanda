@@ -1,0 +1,16 @@
+<div>
+    @each(post in posts.rows)
+      <h1>{{ post.title }}</h1>
+      <p> {{ excerpt(post.body, 200) }} </p>
+    @endeach
+  </div>
+  
+  <hr>
+  
+  <div>
+    @each(anchor in posts.getUrlsForRange(1, posts.lastPage))
+      <a href="{{ anchor.url }}">
+        {{ anchor.page }}
+      </a>
+    @endeach
+  </div>
